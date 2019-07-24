@@ -49,8 +49,8 @@ train_dataset = TencentAlchemyDataset(root='data-bin', mode='dev', transform=tra
 valid_dataset = TencentAlchemyDataset(root='data-bin', mode='valid', transform=transform)
 
 
-valid_loader = DataLoader(valid_dataset, batch_size=128)
-train_loader = DataLoader(train_dataset, batch_size=128, shuffle=True)
+valid_loader = DataLoader(valid_dataset, batch_size=32)
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 
 class MPNN(torch.nn.Module):
     def __init__(self,
@@ -94,7 +94,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = MPNN(node_input_dim=train_dataset.num_features).to(device)
 print(model)
 
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.0005)
 
 
 def train(epoch):
