@@ -6,5 +6,5 @@ wget https://alchemy.tencent.com/data/valid.zip
 
 mkdir -p raw
 
-unzip dev.zip -d raw/dev
-unzip valid.zip -d raw/valid
+unzip dev.zip -d raw
+unzip valid.zip -d raw
