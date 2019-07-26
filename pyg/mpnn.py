@@ -49,8 +49,8 @@ train_dataset = TencentAlchemyDataset(root='data-bin', mode='dev', transform=tra
 valid_dataset = TencentAlchemyDataset(root='data-bin', mode='valid', transform=transform)
 
 
-valid_loader = DataLoader(valid_dataset, batch_size=32)
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+valid_loader = DataLoader(valid_dataset, batch_size=64)
+train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
 
 class MPNN(torch.nn.Module):
     def __init__(self,
