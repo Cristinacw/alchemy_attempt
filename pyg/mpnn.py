@@ -94,7 +94,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = MPNN(node_input_dim=train_dataset.num_features).to(device)
 print(model)
 
-optimizer = torch.optim.Adam(model.parameters(), lr=0.005)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
 
 def train(epoch):
